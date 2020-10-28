@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>获取元素节点</title>
+        <script>
+            window.onload = function() {
+                // var ola=document.getElementById("ol1");
+                // var lia=document.getElementsByTagName("li")
+
+                // alert(lia.length);
+                // for (let i = 0; i < lia.length; i++) {
+                // lia[i].style.backgroundColor='red';            }
+                // var nodes = document.getElementsByClassName("box");
+
+                // alert(nodes.length);
+                // for (let i = 0; i < nodes.length; i++) {
+                //     nodes[i].style.backgroundColor = 'red';
+                // }
+
+                // var a=document.querySelector(".box");
+                // 获取第一个节点
+                // a.style.backgroundColor='red';
+                var a = document.querySelectorAll(".box");
+                // 获取全部节点
+                alert(a.length)
+                for (var i = 0; i < a.length; i++) {
+                    a[i].style.backgroundColor = 'red'
+                }
+            }
+        </script>
+    </head>
+
+    <body>
+        <ol id="ol1">
+            <li>ss</li>
+            <li class="box">ss</li>
+            <li class="box">ss</li>
+            <li>ss</li>
+        </ol>
+    </body>
+
+</html>

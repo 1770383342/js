@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>选项卡</title>
+        <style type="text/css">
+            #div1 button {
+                width: 100px;
+                height: 30px;
+                background-color: gray;
+                color: white;
+                font-size: 18px;
+            }
+
+            #div1 .active {
+                background-color: orange;
+                color: blue;
+            }
+
+            #div1 div {
+                width: 340px;
+                height: 300px;
+                border: 1px solid black;
+                display: none;
+            }
+        </style>
+        <script type="text/javascript">
+            window.onload = function() {
+                var oDiv1 = document.getElementById("div1");
+                var aButton = oDiv1.getElementsByTagName("button");
+                var oDivs = oDiv1.getElementsByTagName("div");
+
+                for (var i = 0; i < aButton.length; i++) {
+                    aButton[i].index=i; 
+                    aButton[i].onclick = function() {
+                        for (var j = 0; j < aButton.length; j++) {
+                            aButton[j].className = '';
+                            oDivs[j].style.display='none';
+                        }
+
+
+                        oDivs[this.index].style.display='block';
+                        this.className = 'active';
+                    }
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <div id="div1">
+            <button class="active">HTML5</button>
+            <button>python</button>
+            <button>java</button>
+            <div style="display: block;">
+                HTML5是构建Web内容的一种语言描述方式。HTML5是互联网的下一代标准，是构建以及呈现互联网内容的一种语言方式．被认为是互联网的核心技术之一。
+            </div>
+            <div>
+                Python是一种跨平台的计算机程序设计语言。 是一个高层次的结合了解释性、编译性、互动性和面向对象的脚本语言。最初被设计用于编写自动化脚本(shell)，
+            </div>
+            <div>
+                Java是一门面向对象编程语言，不仅吸收了C++语言的各种优点，还摒弃了C++里难以理解的多继承、指针等概念，因此Java语言具有功能强大和简单易用两个特征。
+            </div>
+        </div>
+    </body>
+</html>
