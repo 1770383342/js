@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="password" id="pwd">
+    <button id="btn">按钮</button>
+    <script>
+        var pwd = document.getElementById('pwd');
+        var btn = document.getElementById('btn');
+        var flag = 0;
+
+        btn.onclick = function () {
+            if (flag == 0) {
+                pwd.type = 'text';
+                flag = 1;
+            } else {
+                pwd.type = 'password';
+                flag = 0;
+            }
+        }
+    </script>
+</body>
+
+</html>
