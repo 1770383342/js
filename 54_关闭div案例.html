@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 200px;
+            margin: 100px auto;
+            border: 1px black solid;
+        }
+
+        p {
+            width: 200px;
+            height: 200px;
+            margin: 0;
+            background-color: skyblue;
+        }
+        button{
+            position: absolute;
+            top: 100px;
+            left: 844px;
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <p></p>
+        <button id="btn">X</button>
+    </div>
+    <script>
+        var btn=document.querySelector('button');
+        var div=document.querySelector('div');
+
+        btn.onclick=function(){
+            div.style.display='none';
+        }
+    </script>
+</body>
+
+</html>
