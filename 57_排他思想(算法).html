@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .div1 {
+            width: 230px;
+            border: 1px black solid;
+            display: none;
+        }
+
+        button {
+            display: block;
+            width: 100px;
+            text-align: right;
+        }
+
+        .box {
+            width: 230px;
+            margin: 100px auto;
+            border: 1px black solid;
+        }
+
+        img {
+            display: block;
+            float: left;
+            margin-top: 4px;
+        }
+
+        ul {
+            margin: 0px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box" class="box">
+        <button style="background-color: pink;"><img src="./img/expanded.gif" alt=""><span
+                style="color: seagreen;">按钮</span></button>
+        <div style="display: block;" class="div1">
+            <ul>
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+            </ul>
+        </div>
+        <button><img src="./img/collapsed.gif" alt=""><span>按钮</span></button>
+        <div class="div1">2</div>
+        <button><img src="./img/collapsed.gif" alt=""><span>按钮</span></button>
+        <div class="div1">3</div>
+        <button><img src="./img/collapsed.gif" alt=""><span>按钮</span></button>
+        <div class="div1">4</div>
+        <button><img src="./img/collapsed.gif" alt=""><span>按钮</span></button>
+        <div class="div1">5</div>
+    </div>
+    <script>
+        var box = document.getElementById('box')
+        var btn = box.getElementsByTagName('button');
+        var div = box.getElementsByClassName('div1');
+        var span = box.getElementsByTagName('span')
+        var img = box.getElementsByTagName('img');
+
+        for (let i = 0; i < btn.length; i++) {
+            btn[i].onclick = function () {
+                for (let i = 0; i < btn.length; i++) {
+                    btn[i].style.backgroundColor = '';
+                    div[i].style.display = 'none';
+                    span[i].style.color = 'black';
+                    img[i].src = './img/collapsed.gif';
+                }
+                this.style.backgroundColor = 'pink';
+                div[i].style.display = 'block';
+                span[i].style.color = 'seagreen';
+                img[i].src = './img/expanded.gif';
+            }
+        }
+    </script>
+</body>
+
+</html>

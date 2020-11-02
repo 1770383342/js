@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="d1">
+        <input type="checkbox">
+    </div>
+    <div id="d2">
+        <input type="checkbox">
+        <input type="checkbox">
+        <input type="checkbox">
+    </div>
+    <script>
+        var ch1 = document.getElementById('d1').querySelector('input');
+        var ch2 = document.getElementById('d2').getElementsByTagName('input');
+
+        ch1.onclick = function () {
+            for (let i = 0; i < ch2.length; i++) {
+                ch2[i].checked = ch1.checked
+            }
+        }
+
+        for (let i = 0; i < ch2.length; i++) {
+            ch2[i].onclick = function () {
+                var flag = true;
+                for (let i = 0; i < ch2.length; i++) {
+                    if (!ch2[i].checked) {
+                        flag = false;
+                        break;
+                    }
+                }
+                ch1.checked = flag;
+            }
+        }
+    </script>
+</body>
+
+</html>
